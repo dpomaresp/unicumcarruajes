@@ -121,6 +121,42 @@ body {
   border-color: #3071a9;
 }
 
+.btn-new {
+  color: black;
+  background-color: #56e038;
+  border-color: #56e038;
+}
+
+.btn-new:hover{
+  color: #fff;
+  background-color: #4fc934;
+  border-color: #4fc934;
+}
+
+.btn-edit {
+  color: black;
+  background-color: #428BCA;
+  border-color: #428BCA;
+}
+
+.btn-edit:hover{
+  color: #fff;
+  background-color: #3071a9;
+  border-color: #3071a9;
+}
+
+.btn-delete {
+  color: black;
+  background-color: #ef023d;
+  border-color: #ef023d;
+}
+
+.btn-delete:hover{
+  color: #fff;
+  background-color: #d30233;
+  border-color: #d30233;
+}
+
 /*Background colors*/
 
 .bck-color-red {

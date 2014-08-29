@@ -5,7 +5,7 @@
             <li class="active"><a href="#">Dashboard</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-          <li><a href="#">Noticias</a></li>
+          <li><a href="<?php $this->config->item('base_url'); ?>news/">Noticias</a></li>
             <li><a href="#">Documentos</a></li>
             <li><a href="#">Export</a></li>
             <li><a href="">Nav item</a></li>

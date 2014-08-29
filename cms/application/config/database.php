@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'unicumcarruajes.es.mysql';
-$db['default']['username'] = 'unicumcarruajes';
-$db['default']['password'] = 'p0mpowamysql';
-$db['default']['database'] = 'unicumcarruajes';
+$db['default']['hostname'] = 'vecinosdemontiboli.com.mysql';
+$db['default']['username'] = 'vecinosdemontib';
+$db['default']['password'] = 'KwXkUNxC';
+$db['default']['database'] = 'vecinosdemontib';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

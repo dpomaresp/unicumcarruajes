@@ -10,18 +10,51 @@
             return $query->result();
         }
         
-        function getNews() {
-            $query = $this->db->get('News');
-                
+        function getLastNews($offset = NULL, $limit = NULL, $from = NULL, $to = NULL)
+        {
+            $query = '';
+            
+            if(!empty($limit) && $offset >= 0){
+                if(!empty($from) && !empty($to)){
+                    $this->db->where('new_creation_date >=', $from);
+                    $this->db->where('new_creation_date <=', $to);
+                }
+                $this->db->limit($limit, $offset); 
+                $this->db->order_by('new_creation_date', 'desc');
+                $query = $this->db->get('News');    
+            }
+            else{
+                if(!empty($from) && !empty($to)){
+                    $this->db->where('new_creation_date >=', $from);
+                    $this->db->where('new_creation_date <=', $to);
+                }
+                $this->db->order_by('new_creation_date', 'desc');
+                $query = $this->db->get('News');
+            }
+            
             return $query->result();
         }
         
-        function updateNew($id, $title, $description, $comments_allowed, $date) {
+        function insert($title, $description, $date, $external_link)
+        {
+            $data = array (
+                'new_title' => $title,
+                'new_description' => $description,
+                'new_external_link' => $external_link,
+                'new_creation_date' => $date
+            );
+    
+            $this->db->insert('News', $data);
+            
+            return $this->db->affected_rows();
+        }
+        
+        function update($id, $title, $description, $external_link, $date) {
             $data = array(
                'new_title' => $title,
                'new_description' => $description,
-               'comments_allowed' => $comments_allowed,
-               'new_date' => $date
+               'new_external_link' => $external_link,
+               'new_creation_date' => $date
             );
             
             $this->db->where('new_id', $id);
@@ -30,8 +63,21 @@
             return $this->db->affected_rows();
         }
         
-        function deleteNew($id) {
+        function delete($id) {
             return $this->db->delete('News', array('new_id' => $id));
+        }
+        
+        function hasPictures($id) {
+            $this->db->where('fk_new_id', $id);
+            $query = $this->db->get('Images_new');
+    
+            return $query->num_rows();
+        }
+    
+        function count(){
+            $query = $this->db->get('News');
+    
+            return $query->num_rows();   
         }
     }
 ?>
