@@ -48,9 +48,12 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'vecinosdemontiboli.com.mysql';
-$db['default']['username'] = 'vecinosdemontib';
-$db['default']['password'] = 'KwXkUNxC';
+// $db['default']['hostname'] = 'vecinosdemontiboli.com.mysql';
+// $db['default']['username'] = 'vecinosdemontib';
+// $db['default']['password'] = 'KwXkUNxC';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'root';
 $db['default']['database'] = 'vecinosdemontib';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
