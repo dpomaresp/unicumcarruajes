@@ -8,6 +8,7 @@
 
     <link href="/styles/css/bootstrap.css" rel="stylesheet">
     <link href="/styles/css/style.css" rel="stylesheet">
+    <link href="/styles/css/jquery.datetimepicker.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top menu-color" role="navigation">
@@ -19,10 +20,6 @@
     </div>
     
     <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-left">
-            <li><a href="<?php echo $this->config->item('base_url'); ?>user">Usuarios</a></li>
-            <li><a href="<?php echo $this->config->item('base_url'); ?>comment">Comentarios</a></li>
-        </ul>
         <a href="dashboard/logout" class="btn btn-logout navbar-btn navbar-right">
           <span class="glyphicon glyphicon-off"></span> Salir
         </a>

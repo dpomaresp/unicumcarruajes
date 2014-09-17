@@ -4,7 +4,7 @@
             parent::__construct();
         }
         
-        function getNew($id) {
+        function get($id) {
             $query = $this->db->get_where('News', array('new_id' => $id));
             
             return $query->result();
@@ -35,7 +35,7 @@
             return $query->result();
         }
         
-        function insert($title, $description, $date, $external_link)
+        function insert($title, $description, $external_link, $date)
         {
             $data = array (
                 'new_title' => $title,

@@ -9,7 +9,9 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('user_password', 'Password', 'trim');		
 	}
 
-	function index() {			
+	function index() {
+		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');			
+		
 		if($this->form_validation->run()){
 			if($this->config->item('admin-user') == $this->input->post('user_name') && 
 				$this->config->item('admin-password') == md5($this->input->post('user_password'))){

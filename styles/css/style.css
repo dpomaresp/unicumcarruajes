@@ -97,6 +97,10 @@ body {
 }
 
 /* Buttons  */
+
+a.link_button{
+  text-decoration: none;
+}
 .btn-logout {
   color: black;
   background-color: #F95242;
